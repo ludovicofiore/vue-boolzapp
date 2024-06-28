@@ -40,7 +40,7 @@
 
                 <div class="profile-data">
                     <div class="profile-pic">
-                        <img src="https://picsum.photos/200" alt="immagine profilo">
+                        <img src="img/imgprofilo.jpg" alt="immagine profilo">
                     </div>
                     <span>Ludovico</span>
                 </div>
@@ -71,17 +71,17 @@
             <!-- lista contatti -->
             <div id="list-container">
 
-                <div class="contact">
+                <div class="contact" v-for="(contact, index) in contacts" :key="index">
 
                     <div class="contact-data">
 
                         <div class="contact-image">
-                            <img src="https://picsum.photos/200" alt="">
+                            <img :src="contact.avatar" :alt="'foto profilo di ' + contact.name">
                         </div>
     
                         <div class="contact-text">
-                            <p class="contact-name">Michele</p>
-                            <p class="contact-last-message">ultimo messaggio inviato</p>
+                            <p class="contact-name">{{contact.name}}</p>
+                            <p class="contact-last-message">{{contact.messages[contact.messages.length - 1].message}}</p>
     
                         </div>
                     </div>

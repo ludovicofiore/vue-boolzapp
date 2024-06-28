@@ -50,20 +50,8 @@ main {
 /* barra sinistra con lista contatti */
 #left-col {
     width: 35%;
-    /* debug */
-    background-color: blueviolet;
-    height: 100%;
 }
 
-
-
-/* parte destra con chat */
-#chat-container {
-    width: 65%;
-    /* debug */
-    background-color: brown;
-    height: 100%;
-}
 
 /* div profilo utente */
 .profile {
@@ -128,7 +116,8 @@ main {
 /* barra di ricerca */
 #input-container {
     width: 100%;
-    padding: 5px;
+    height: 50px;
+    padding: 10px;
     background-color: white;
 
 }
@@ -141,6 +130,8 @@ main {
 /* lista contatti */
 #list-container {
     background-color: white;
+    overflow-y: auto;
+    height: calc(100% - 190px);
     
 }
 
@@ -180,4 +171,15 @@ main {
 .contact-last-message {
     color: grey;
     font-size: small;
+}
+
+
+
+
+/* parte destra con chat */
+#chat-container {
+    width: 65%;
+    /* debug */
+    background-color: brown;
+    height: 100%;
 }
