@@ -125,4 +125,59 @@ main {
     color: rgb(141, 217, 252);
 }
 
+/* barra di ricerca */
+#input-container {
+    width: 100%;
+    padding: 5px;
+    background-color: white;
 
+}
+
+#input-container input {
+    width: 100%;
+    padding: 5px;
+}
+
+/* lista contatti */
+#list-container {
+    background-color: white;
+    
+}
+
+.contact {
+    width: 100%;
+    padding: 5px;
+    padding-left: 10px;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact:hover {
+    background-color: rgb(232, 235, 235);
+    cursor: pointer;
+}
+
+.contact-data {
+    display: flex;
+}
+
+.contact-image {
+    width: 60px;
+    margin-right: 15px;
+}
+
+.contact-image img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.contact-name {
+    font-weight: bold;
+}
+
+.contact-last-message {
+    color: grey;
+    font-size: small;
+}
