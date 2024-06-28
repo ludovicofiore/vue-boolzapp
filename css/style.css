@@ -42,9 +42,8 @@ main {
     left: 15%;
     right: 15%;
     display: flex;
-    /* debug */
-    background-color: blue;
 }
+
 
 
 /* barra sinistra con lista contatti */
@@ -176,10 +175,84 @@ main {
 
 
 
+
 /* parte destra con chat */
 #chat-container {
     width: 65%;
-    /* debug */
-    background-color: brown;
-    height: 100%;
+}
+
+/* barra in alto */
+#top-bar {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-left: 1px solid grey;
+}
+
+/* contenuto chat */
+#chat-content {
+    width: 100%;
+    height: calc(100% - 150px);
+    overflow-y: auto;
+    background-image: url(../img/chat-bg.jpg);
+    background-size: 400px;
+    padding: 50px 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    width: 30%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+
+}
+
+.message-time {
+    font-size: 10px;
+    color: grey;
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
+}
+
+.sent {
+    align-self: flex-end;
+    background-color: rgb(214, 250, 187);
+}
+
+.received {
+    align-self: flex-start;
+    background-color: white;
+}
+
+
+/* barra in basso con input */
+#write-bar {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(242, 237, 233);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.write-message {
+    display: inline-block;
+    width: 85%;
+    height: 90%;
+    padding: 0 15px;
+    border-radius: 10px;
+    border: 0;
+}
+
+.icon {
+    font-size: 25px;
+    color: rgb(176, 176, 176);
 }

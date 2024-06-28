@@ -88,7 +88,7 @@
                     
 
                     <div class="contact-last-message">
-                        12:00
+                        {{contact.messages[contact.messages.length - 1].date}}
                     </div>
                 </div>
             </div>
@@ -100,6 +100,60 @@
 
         <!-- parte destra con chat -->
         <section id="chat-container">
+
+            <!-- barra profilo chat in alto -->
+            <div id="top-bar">
+                <div class="contact-data">
+
+                    <div class="contact-image">
+                        <img src="img/img1.jpg" alt="'foto profilo di ' + contact.name">
+                    </div>
+    
+                    <div class="contact-text">
+                        <p class="contact-name">Michele</p>
+                        <p class="contact-last-message">Ultimo accesso oggi alle 12:00</p>
+    
+                    </div>
+                </div>
+
+                <div class="profile-options">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+
+            <!-- contenuto chat -->
+            <div id="chat-content">
+
+                <div class="message sent">
+                    <p>
+                        stendi i panni 
+                    </p>
+                    <span class="message-time">
+                        16:15
+                    </span> 
+                </div>
+
+                <div class="message received">
+                    <p>
+                        tutto fatto 
+                    </p>
+                    <span class="message-time">
+                        16:15
+                    </span> 
+                </div>
+            </div>
+
+            <!-- barra in basso con input text -->
+            <div id="write-bar">
+                <span class="icon"><i class="fa-regular fa-face-smile"></i></span>
+                
+                <input type="text" class="write-message" placeholder="Scrivi un messaggio">
+                
+                <span class="icon"><i class="fa-solid fa-microphone"></i></span>
+            </div>
+            
 
         </section>
     </div>
