@@ -168,14 +168,20 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+
+            // creo proprietà per chat da visualizzare
+            activeChat: 0,
             
 
         }
     },
 
     methods: {
-
+        // funzione per click su contatto e mostrare chat
+        showChat(currentChat) {
+            this.activeChat = currentChat;
+        }
         
     },
 }).mount("#app");

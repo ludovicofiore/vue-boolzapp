@@ -200,6 +200,10 @@ main {
     background-image: url(../img/chat-bg.jpg);
     background-size: 400px;
     padding: 50px 80px;
+    
+}
+
+.message-container {
     display: flex;
     flex-direction: column;
 }

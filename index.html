@@ -71,7 +71,7 @@
             <!-- lista contatti -->
             <div id="list-container">
 
-                <div class="contact" v-for="(contact, index) in contacts" :key="index">
+                <div class="contact" v-for="(contact, index) in contacts" :key="index" @click="showChat(index)">
 
                     <div class="contact-data">
 
@@ -106,11 +106,11 @@
                 <div class="contact-data">
 
                     <div class="contact-image">
-                        <img src="img/img1.jpg" alt="'foto profilo di ' + contact.name">
+                        <img :src="contacts[activeChat].avatar" alt="'foto profilo di ' + contact.name">
                     </div>
     
                     <div class="contact-text">
-                        <p class="contact-name">Michele</p>
+                        <p class="contact-name">{{contacts[activeChat].name}}</p>
                         <p class="contact-last-message">Ultimo accesso oggi alle 12:00</p>
     
                     </div>
@@ -126,23 +126,26 @@
             <!-- contenuto chat -->
             <div id="chat-content">
 
-                <div class="message sent">
-                    <p>
-                        stendi i panni 
-                    </p>
-                    <span class="message-time">
-                        16:15
-                    </span> 
+                <div class="message-container">
+                    <div class="message sent">
+                        <p>
+                            stendi i panni 
+                        </p>
+                        <span class="message-time">
+                            16:15
+                        </span> 
+                    </div>
+    
+                    <div class="message received">
+                        <p>
+                            tutto fatto 
+                        </p>
+                        <span class="message-time">
+                            16:15
+                        </span> 
+                    </div>
                 </div>
-
-                <div class="message received">
-                    <p>
-                        tutto fatto 
-                    </p>
-                    <span class="message-time">
-                        16:15
-                    </span> 
-                </div>
+                
             </div>
 
             <!-- barra in basso con input text -->
