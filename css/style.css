@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: "Lato", sans-serif;
+}
+
 main {
     width: 100vw;
     height: 100vh;
@@ -37,7 +41,66 @@ main {
     bottom: 5%;
     left: 15%;
     right: 15%;
+    display: flex;
     /* debug */
     background-color: blue;
 }
+
+
+/* barra sinistra con lista contatti */
+#left-col {
+    width: 35%;
+    /* debug */
+    background-color: blueviolet;
+    height: 100%;
+}
+
+
+
+/* parte destra con chat */
+#chat-container {
+    width: 65%;
+    /* debug */
+    background-color: brown;
+    height: 100%;
+}
+
+/* div profilo utente */
+.profile {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+}
+
+
+.profile-data {
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+.profile-pic {
+    width: 30%;
+    margin-right: 5px;
+    
+}
+
+.profile-pic img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.profile-options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+    color: rgb(176, 176, 176);
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+
 
