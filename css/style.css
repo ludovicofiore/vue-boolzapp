@@ -149,6 +149,10 @@ main {
     cursor: pointer;
 }
 
+.active {
+    background-color: rgb(232, 235, 235);
+}
+
 .contact-data {
     display: flex;
 }

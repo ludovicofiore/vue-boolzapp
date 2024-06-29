@@ -172,6 +172,8 @@ createApp({
 
             // creo proprietà per chat da visualizzare
             activeChat: 0,
+
+            // activeMessage: 0,
             
 
         }
@@ -181,7 +183,12 @@ createApp({
         // funzione per click su contatto e mostrare chat
         showChat(currentChat) {
             this.activeChat = currentChat;
-        }
+            this.activeMessage = currentChat;
+        },
+
+        // showMessage(currentMessage) {
+        //     this.activeMessage = currentMessage;
+        // }
         
     },
 }).mount("#app");

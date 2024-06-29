@@ -71,7 +71,7 @@
             <!-- lista contatti -->
             <div id="list-container">
 
-                <div class="contact" v-for="(contact, index) in contacts" :key="index" @click="showChat(index)">
+                <div class="contact" :class="activeChat === index ? 'active' : ''" v-for="(contact, index) in contacts" :key="index" @click="showChat(index)">
 
                     <div class="contact-data">
 
@@ -126,24 +126,16 @@
             <!-- contenuto chat -->
             <div id="chat-content">
 
-                <div class="message-container">
-                    <div class="message sent">
+                <div class="message-container" v-for="contact in contacts">
+                    <div class="message" :class="chatMessage.status === 'sent' ? 'sent' : 'received'" v-for="(chatMessage, index) in contact.messages" :key="index">
                         <p>
-                            stendi i panni 
+                            {{chatMessage.message}} 
                         </p>
                         <span class="message-time">
-                            16:15
+                            {{chatMessage.date}}
                         </span> 
                     </div>
     
-                    <div class="message received">
-                        <p>
-                            tutto fatto 
-                        </p>
-                        <span class="message-time">
-                            16:15
-                        </span> 
-                    </div>
                 </div>
                 
             </div>
