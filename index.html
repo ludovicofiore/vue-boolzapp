@@ -126,13 +126,13 @@
             <!-- contenuto chat -->
             <div id="chat-content">
 
-                <div class="message-container" v-for="contact in contacts">
-                    <div class="message" :class="chatMessage.status === 'sent' ? 'sent' : 'received'" v-for="(chatMessage, index) in contact.messages" :key="index">
+                <div class="message-container">
+                    <div class="message" :class="chatMessage[activeChat].messages.status === 'sent' ? 'sent' : 'received'" v-for="(chatMessage, index) in contacts" :key="index" >
                         <p>
-                            {{chatMessage[activeChat].message}} 
+                            {{chatMessage[activeChat].messages.message}} 
                         </p>
                         <span class="message-time">
-                            {{chatMessage.date}}
+                            <!-- {{chatMessage.date}} -->
                         </span> 
                     </div>
     
