@@ -111,7 +111,7 @@
     
                     <div class="contact-text">
                         <p class="contact-name">{{contacts[activeChat].name}}</p>
-                        <p class="contact-last-message">Ultimo accesso oggi alle 12:00</p>
+                        <p class="contact-last-message">Ultimo accesso oggi alle {{contacts[activeChat].messages[contacts[activeChat].messages.length - 1].date}}</p>
     
                     </div>
                 </div>
@@ -127,12 +127,12 @@
             <div id="chat-content">
 
                 <div class="message-container">
-                    <div class="message" :class="chatMessage[activeChat].messages.status === 'sent' ? 'sent' : 'received'" v-for="(chatMessage, index) in contacts" :key="index" >
+                    <div class="message" :class="chatMessage.status === 'sent' ? 'sent' : 'received'" v-for="(chatMessage, index) in contacts[activeChat].messages" :key="index" >
                         <p>
-                            {{chatMessage[activeChat].messages.message}} 
+                            {{chatMessage.message}} 
                         </p>
                         <span class="message-time">
-                            <!-- {{chatMessage.date}} -->
+                            {{chatMessage.date}}
                         </span> 
                     </div>
     
