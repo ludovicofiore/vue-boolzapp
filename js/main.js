@@ -173,6 +173,12 @@ createApp({
             // creo proprietà per chat da visualizzare
             activeChat: 0,
 
+            // creo oggetto per nuovo messaggio 
+            newMessage : {
+                message: '',
+                status: 'sent'
+            }
+
             
             
 
@@ -185,6 +191,16 @@ createApp({
             this.activeChat = currentChat;
             
         },
+
+        // funzione per aggiungere messaggio 
+        addMessage() {
+            // // creo oggetto da pushare in array
+            const clonedNewMessage = { ...this.newMessage};
+
+            // // pusho il nuovo oggetto
+            this.contacts[this.activeChat].messages.push(clonedNewMessage);
+
+        }
 
     },
 }).mount("#app");

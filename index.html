@@ -144,7 +144,7 @@
             <div id="write-bar">
                 <span class="icon"><i class="fa-regular fa-face-smile"></i></span>
                 
-                <input type="text" class="write-message" placeholder="Scrivi un messaggio">
+                <input type="text" class="write-message" placeholder="Scrivi un messaggio" v-model="newMessage.message" @keyup.enter="addMessage">
                 
                 <span class="icon"><i class="fa-solid fa-microphone"></i></span>
             </div>
