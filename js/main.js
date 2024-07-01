@@ -183,7 +183,7 @@ createApp({
         // funzione per click su contatto e mostrare chat
         showChat(currentChat) {
             this.activeChat = currentChat;
-            this.activeMessage = currentChat;
+            // this.activeMessage = this.activeChat;
         },
 
         // showMessage(currentMessage) {
