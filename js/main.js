@@ -177,6 +177,12 @@ createApp({
             newMessage : {
                 message: '',
                 status: 'sent'
+            },
+
+            // creo oggetto per risposta automatica
+            autoResponseMessage: {
+                message: 'ok',
+                status: 'received'
             }
 
             
@@ -192,6 +198,11 @@ createApp({
             
         },
 
+        // funzione per risposta automatica
+        autoResponse() {
+            this.contacts[this.activeChat].messages.push(this.autoResponseMessage);
+        },
+
         // funzione per aggiungere messaggio 
         addMessage() {
             // // creo oggetto da pushare in array
@@ -200,7 +211,9 @@ createApp({
             // // pusho il nuovo oggetto
             this.contacts[this.activeChat].messages.push(clonedNewMessage);
 
-        }
-
+            // timeout per risposta automatica
+            setTimeout(this.autoResponse, 1000);
+        },
+        
     },
 }).mount("#app");
