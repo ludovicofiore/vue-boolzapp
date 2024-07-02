@@ -65,13 +65,13 @@
 
             <!-- barra di ricerca -->
             <div id="input-container">
-                <input type="text" placeholder="cerca o inizia una nuova chat">
+                <input type="text" placeholder="cerca o inizia una nuova chat" v-model="searchContact" @input="filterSearch">
             </div>
 
             <!-- lista contatti -->
             <div id="list-container">
 
-                <div class="contact" :class="activeChat === index ? 'active' : ''" v-for="(contact, index) in contacts" :key="index" @click="showChat(index)">
+                <div class="contact" :class="activeChat === index ? 'active' : ''" v-for="(contact, index) in filteredContact" :key="index" @click="showChat(index)">
 
                     <div class="contact-data">
 
@@ -106,12 +106,12 @@
                 <div class="contact-data">
 
                     <div class="contact-image">
-                        <img :src="contacts[activeChat].avatar" alt="'foto profilo di ' + contact.name">
+                        <img :src="filteredContact[activeChat].avatar" alt="'foto profilo di ' + filteredContact[activeChat].name">
                     </div>
     
                     <div class="contact-text">
-                        <p class="contact-name">{{contacts[activeChat].name}}</p>
-                        <p class="contact-last-message">Ultimo accesso oggi alle {{contacts[activeChat].messages[contacts[activeChat].messages.length - 1].date}}</p>
+                        <p class="contact-name">{{filteredContact[activeChat].name}}</p>
+                        <p class="contact-last-message">Ultimo accesso oggi alle {{filteredContact[activeChat].messages[filteredContact[activeChat].messages.length - 1].date}}</p>
     
                     </div>
                 </div>
@@ -127,7 +127,7 @@
             <div id="chat-content">
 
                 <div class="message-container">
-                    <div class="message" :class="chatMessage.status === 'sent' ? 'sent' : 'received'" v-for="(chatMessage, index) in contacts[activeChat].messages" :key="index" >
+                    <div class="message" :class="chatMessage.status === 'sent' ? 'sent' : 'received'" v-for="(chatMessage, index) in filteredContact[activeChat].messages" :key="index" >
                         <p>
                             {{chatMessage.message}} 
                         </p>

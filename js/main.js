@@ -5,6 +5,9 @@ createApp({
     data() {
         return {
 
+            // creo proprietà per ricerca contatto 
+            searchContact: "",
+
             // struttura dati
             contacts: [
                 {
@@ -183,11 +186,11 @@ createApp({
             autoResponseMessage: {
                 message: 'ok',
                 status: 'received'
-            }
+            },
 
+            // creo array per valori cercati
+            filteredContact: [],
             
-            
-
         }
     },
 
@@ -214,6 +217,22 @@ createApp({
             // timeout per risposta automatica
             setTimeout(this.autoResponse, 1000);
         },
+
+        // creo funzione per ricerca contatti
+        filterSearch() {
+            
+            // vedo se nei nomi degli oggetti sono compresi i caratteri scritti nella barra di ricerca e opero sul nuovo array
+            this.filteredContact = this.contacts.filter(contact =>
+                contact.name.toLowerCase().includes(this.searchContact.toLowerCase())
+            );
+
+            console.log(this.filteredContact);
+        }
         
     },
+
+    // se non viene fatta nessuna ricerca i due array coincidono così da mostrare tutte le chat 
+    created() {
+        this.filteredContact = this.contacts
+    }
 }).mount("#app");
