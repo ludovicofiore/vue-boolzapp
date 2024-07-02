@@ -17,7 +17,12 @@
     <!-- css -->
      <link rel="stylesheet" href="css/style.css">
 </head>
+
+
+
 <body>
+
+    
 <main>
      <!-- sfondo -->
      <div class="background">
@@ -39,10 +44,10 @@
             <div class="profile">
 
                 <div class="profile-data">
-                    <div class="profile-pic">
-                        <img src="img/imgprofilo.jpg" alt="immagine profilo">
+                    <div class="contact-image">
+                        <img :src="userProfile.avatar" alt="immagine profilo">
                     </div>
-                    <span>Ludovico</span>
+                    <span class="contact-name">{{userProfile.name}}</span>
                 </div>
 
                 <div class="profile-options">
@@ -65,6 +70,7 @@
 
             <!-- barra di ricerca -->
             <div id="input-container">
+                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
                 <input type="text" placeholder="cerca o inizia una nuova chat" v-model="searchContact" @input="filterSearch">
             </div>
 
@@ -87,7 +93,7 @@
                     </div>
                     
 
-                    <div class="contact-last-message">
+                    <div class="contact-last-message contact-date">
                         {{contact.messages[contact.messages.length - 1].date}}
                     </div>
                 </div>

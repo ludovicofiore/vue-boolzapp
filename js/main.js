@@ -8,6 +8,12 @@ createApp({
             // creo proprietà per ricerca contatto 
             searchContact: "",
 
+            // oggetto per immagine e nome profilo
+            userProfile : {
+                name: 'Ludovico',
+                avatar: './img/imgprofilo.jpg'
+            },
+
             // struttura dati
             contacts: [
                 {
@@ -203,7 +209,7 @@ createApp({
 
         // funzione per risposta automatica
         autoResponse() {
-            this.contacts[this.activeChat].messages.push(this.autoResponseMessage);
+            this.filteredContact[this.activeChat].messages.push(this.autoResponseMessage);
         },
 
         // funzione per aggiungere messaggio 
@@ -212,7 +218,7 @@ createApp({
             const clonedNewMessage = { ...this.newMessage};
 
             // // pusho il nuovo oggetto
-            this.contacts[this.activeChat].messages.push(clonedNewMessage);
+            this.filteredContact[this.activeChat].messages.push(clonedNewMessage);
 
             // timeout per risposta automatica
             setTimeout(this.autoResponse, 1000);
