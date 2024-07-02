@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* regole sfondo */
+.background {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#green-bg {
+    background-color: rgb(0, 150, 135);
+    width: 100%;
+    height: 20%;
+}
+
+#grey-bg {
+    background-color: rgb(216, 219, 213);
+    width: 100%;
+    height: 80%;
+}
+
+
+/* main content */
+#app {
+    width: 70%;
+    position: absolute;
+    top: 5%;
+    bottom: 5%;
+    left: 15%;
+    right: 15%;
+    display: flex;
+}
+
+
+
+/* barra sinistra con lista contatti */
+#left-col {
+    width: 35%;
+}
+
+
+/* div profilo utente */
+.profile {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+}
+
+
+.profile-data {
+    display: flex;
+    align-items: center;
+}
+.profile-pic {
+    width: 30%;
+    margin-right: 5px;
+    
+}
+
+.profile-pic img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.profile-options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+    color: rgb(176, 176, 176);
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+
+/* div notifiche */
+#notifications {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(141, 217, 252);
+    display: flex;
+    align-items: center;
+}
+
+#notifications a {
+    color: grey;
+}
+
+.fa-bell-slash {
+    font-size: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 5px;
+    color: rgb(141, 217, 252);
+}
+
+/* barra di ricerca */
+#input-container {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#input-container .fa-solid {
+    color: rgb(176, 176, 176);
+    background-color: white;
+    border: 1px solid lightgray;
+    border-right: 0;
+    padding: 5px 20px;
+}
+
+#input-container input {
+    width: 80%;
+    padding: 5px;
+    /* border-radius: 10px; */
+    border: 1px solid lightgray;  
+}
+
+/* lista contatti */
+#list-container {
+    background-color: white;
+    overflow-y: auto;
+    height: calc(100% - 190px);
+    
+}
+
+.contact {
+    width: 100%;
+    padding: 5px;
+    padding-left: 10px;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact:hover {
+    background-color: rgb(232, 235, 235);
+    cursor: pointer;
+}
+
+.active {
+    background-color: rgb(232, 235, 235);
+}
+
+.contact-data {
+    display: flex;
+}
+
+.contact-image {
+    width: 60px;
+    margin-right: 15px;
+}
+
+.contact-image img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.contact-name {
+    font-weight: bold;
+}
+
+.contact-last-message {
+    color: grey;
+    font-size: small;
+}
+
+#list-container .contact-text {
+    max-width: 70%;
+}
+
+#list-container .contact-date {
+    max-width: 20%;
+}
+
+
+
+
+
+/* parte destra con chat */
+#chat-container {
+    width: 65%;
+}
+
+/* barra in alto */
+#top-bar {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-left: 1px solid grey;
+}
+
+/* contenuto chat */
+#chat-content {
+    width: 100%;
+    height: calc(100% - 150px);
+    overflow-y: auto;
+    background-image: url(../img/chat-bg.jpg);
+    background-size: 400px;
+    padding: 50px 80px;
+    
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    width: 30%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+
+}
+
+.message-time {
+    font-size: 10px;
+    color: grey;
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
+}
+
+.dropdown {
+    font-size: 15px;
+    color: grey;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    background-color: white;
+    
+}
+
+.sent {
+    align-self: flex-end;
+    background-color: rgb(214, 250, 187);
+}
+
+.received {
+    align-self: flex-start;
+    background-color: white;
+}
+
+
+/* barra in basso con input */
+#write-bar {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(242, 237, 233);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.write-message {
+    display: inline-block;
+    width: 85%;
+    height: 90%;
+    padding: 0 15px;
+    border-radius: 10px;
+    border: 0;
+}
+
+.icon {
+    font-size: 25px;
+    color: rgb(176, 176, 176);
+}
